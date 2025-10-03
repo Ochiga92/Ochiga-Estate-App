@@ -45,19 +45,19 @@ services:
       - ./ochiga-backend-for-estate-and-smart-home:/app
 
   frontend:
-    build:
-      context: ./ochiga-frontend-for-estate-and-smart-home/ochiga-frontend
-      dockerfile: Dockerfile
-    container_name: estate_frontend
-    restart: always
-    depends_on:
-      - backend
-    ports:
-      - "3001:3000"
-    environment:
-      NEXT_PUBLIC_API_URL: http://estate_backend:3000
-    volumes:
-      - ./ochiga-frontend-for-estate-and-smart-home/ochiga-frontend:/app
+  build:
+    context: ./ochiga-frontend-for-estate-and-smart-home
+    dockerfile: Dockerfile
+  container_name: estate_frontend
+  restart: always
+  depends_on:
+    - backend
+  ports:
+    - "3001:3000"
+  environment:
+    NEXT_PUBLIC_API_URL: http://estate_backend:3000
+  volumes:
+    - ./ochiga-frontend-for-estate-and-smart-home:/app
 
 volumes:
   db_data:
