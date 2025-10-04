@@ -57,7 +57,7 @@ services:
     environment:
       NEXT_PUBLIC_API_URL: http://estate_backend:3000
     volumes:
-      - ./ochiga-frontend-for-estate-and-smart-home:/app
+      - ./ochiga-frontend-for-estate-and-smart-home/ochiga-frontend:/app
 
 volumes:
   db_data:
