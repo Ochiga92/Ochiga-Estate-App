@@ -8,8 +8,11 @@ services:
       - "3000:3000"
     volumes:
       - ./Ochiga-frontend-for-estate-and-smart-home/ochiga-frontend:/app
+      - /app/node_modules
     working_dir: /app
     command: npm run dev
+    environment:
+      - WATCHPACK_POLLING=true
     depends_on:
       - backend
 
