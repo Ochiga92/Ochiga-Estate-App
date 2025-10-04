@@ -9,7 +9,7 @@ services:
     volumes:
       - ./Ochiga-frontend-for-estate-and-smart-home/ochiga-frontend:/app
     working_dir: /app
-    command: npm run start
+    command: npm run dev
     depends_on:
       - backend
 
